@@ -1,0 +1,172 @@
+/* Asosiy sozlamalar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0a0a0a; /* To'q qora fon */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid #c5a059; /* Tilla rangli ramka */
+    padding: 40px 20px;
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Orqa fondagi chizmalar (blueprint) effekti */
+}
+
+/* Sarlavha */
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 24px;
+    color: #c5a059; /* Tilla rang */
+    letter-spacing: 2px;
+    line-height: 1.4;
+    text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+}
+
+.hero-section h1 span {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+/* Markaziy rasm */
+.main-image-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.main-image {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #c5a059;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.02); /* Rasm ustiga kelganda kattalashadi */
+}
+
+/* Bo'limlar (Kartochkalar) */
+.sections-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Karta ustiga kelganda (Hover) */
+.card:hover {
+    background: rgba(197, 160, 89, 0.1);
+    border-color: #c5a059;
+    transform: translateX(10px); /* O'ngga siljish animatsiyasi */
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
+}
+
+.card-icon {
+    font-size: 30px;
+    color: #c5a059;
+    margin-right: 20px;
+    width: 50px;
+    text-align: center;
+}
+
+.card-content h2 {
+    font-size: 18px;
+    color: #c5a059;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+/* ALOQA BO'LIMI */
+.contact-section {
+    text-align: center;
+    border-top: 1px solid rgba(197, 160, 89, 0.3);
+    padding-top: 30px;
+}
+
+.contact-section h2 {
+    color: #c5a059;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    color: #b3b3b3;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: #c5a059;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid #c5a059;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #c5a059;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+}
+
+/* JONLI ANIMATSIYA (JS orqali qo'shiladi) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
