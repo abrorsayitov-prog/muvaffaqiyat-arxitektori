@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meros | Muvaffaqiyat Arxitektori</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-title { text-align: center; color: #c5a059; font-size: 32px; margin-bottom: 30px; letter-spacing: 2px; }
+        .back-btn { display: inline-block; color: #c5a059; text-decoration: none; margin-bottom: 20px; font-size: 14px; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+        .back-btn:hover { background: #c5a059; color: #0a0a0a; }
+        
+        .lessons-grid { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; }
+        .lesson-card { display: flex; align-items: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.3); padding: 15px; border-radius: 8px; text-decoration: none; color: white; transition: 0.3s; }
+        .lesson-card:hover { background: rgba(197, 160, 89, 0.1); border-color: #c5a059; transform: translateX(10px); }
+        .lesson-card img { width: 120px; height: 80px; object-fit: cover; border-radius: 5px; margin-right: 20px; border: 1px solid #c5a059; }
+        .lesson-info h3 { color: #c5a059; margin-bottom: 5px; font-size: 18px; }
+        .lesson-info p { color: #b3b3b3; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Orqaga</a>
+        
+        <h1 class="page-title">MEROS DARSLARI</h1>
+        <p style="text-align: center; color: #b3b3b3; margin-bottom: 30px;">Sizdan keyin qoladigan iz va bardoshli qadriyatlar.</p>
+
+        <!-- Meros sahifasining asosiy rasmi -->
+        <div style="text-align: center; margin-bottom: 40px;">
+            <img src="meros-rasm.jpg" alt="Meros" style="width: 100%; max-width: 600px; border-radius: 10px; border: 1px solid #c5a059; box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);">
+        </div>
+
+        <div class="lessons-grid">
+            
+            <!-- 1-Dars -->
+            <a href="meros-dars-1.html" class="lesson-card fade-in">
+                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+1" alt="Dars 1">
+                <div class="lesson-info">
+                    <h3>1. Qadriyatlar tizimi</h3>
+                    <p>Sizning shaxsiy qoidalaringiz va tamoyillaringiz.</p>
+                </div>
+            </a>
+
+            <!-- 2-Dars -->
+            <a href="meros-dars-2.html" class="lesson-card fade-in">
+                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+2" alt="Dars 2">
+                <div class="lesson-info">
+                    <h3>2. Oilaviy meros</h3>
+                    <p>Farzandlarga qoldiriladigan eng katta boylik.</p>
+                </div>
+            </a>
+
+            <!-- 3-Dars -->
+            <a href="meros-dars-3.html" class="lesson-card fade-in">
+                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+3" alt="Dars 3">
+                <div class="lesson-info">
+                    <h3>3. Xayriya va jamiyatga hissa</h3>
+                    <p>Yaxshilik qilish — abadiy qoladigan sarmoyadir.</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
