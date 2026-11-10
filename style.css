@@ -170,3 +170,68 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+/* Til tanlash menyusi */
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-btn {
+    background: transparent;
+    color: #c5a059;
+    border: 1px solid #c5a059;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    background: rgba(197, 160, 89, 0.1);
+}
+
+.lang-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #1a1a1a;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    border: 1px solid #c5a059;
+    border-radius: 5px;
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.lang-menu a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.lang-menu a:hover {
+    background-color: #c5a059;
+    color: #0a0a0a;
+}
+
+.lang-dropdown:hover .lang-menu {
+    display: block;
+}
