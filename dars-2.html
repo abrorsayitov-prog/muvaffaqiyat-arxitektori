@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-Dars: Vaqtni boshqarish | Muvaffaqiyat Arxitektori</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .back-btn { display: inline-block; color: #c5a059; text-decoration: none; margin-bottom: 20px; font-size: 14px; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+        .back-btn:hover { background: #c5a059; color: #0a0a0a; }
+        .lesson-header { border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 20px; margin-bottom: 30px; }
+        .lesson-header h1 { color: #c5a059; font-size: 28px; margin-bottom: 10px; }
+        .meta-info { display: flex; gap: 20px; color: #b3b3b3; font-size: 14px; }
+        .meta-info i { color: #c5a059; margin-right: 5px; }
+        .video-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: 30px; }
+        .video-wrapper video, .video-wrapper iframe { width: 100%; max-width: 800px; border-radius: 10px; border: 1px solid #c5a059; box-shadow: 0 0 15px rgba(197, 160, 89, 0.2); aspect-ratio: 16/9; }
+        .article-content { color: #d1d1d1; line-height: 1.8; font-size: 16px; margin-bottom: 40px; }
+        .article-content img { width: 100%; border-radius: 10px; margin: 20px 0; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .comments-section { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.2); padding: 20px; border-radius: 10px; margin-top: 40px; }
+        .comments-section h3 { color: #c5a059; margin-bottom: 15px; }
+        .comment-box { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+        .comment-box textarea { background: #111; border: 1px solid #333; color: white; padding: 15px; border-radius: 8px; resize: vertical; min-height: 100px; font-family: inherit; }
+        .comment-box textarea:focus { outline: none; border-color: #c5a059; }
+        .comment-box button { align-self: flex-end; background: #c5a059; color: #0a0a0a; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .comment-box button:hover { background: #e0b96b; }
+        .single-comment { border-top: 1px solid #333; padding: 15px 0; }
+        .single-comment .user { color: #c5a059; font-weight: bold; font-size: 14px; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
+        .single-comment .date { color: #666; font-size: 12px; font-weight: normal; margin-left: auto; }
+        .single-comment p { color: #a0a0a0; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="strategiya.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Strategiyaga qaytish</a>
+
+        <div class="lesson-header">
+            <h1>2. Vaqtni boshqarish (Time Management)</h1>
+            <div class="meta-info">
+                <span><i class="fa-regular fa-eye"></i> 3,412 ko'rishlar</span>
+                <span><i class="fa-regular fa-calendar"></i> 2026-yil 12-noyabr</span>
+            </div>
+        </div>
+
+        <!-- Video joyi (YouTube yoki kompyuterdan) -->
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="article-content">
+            <p>Vaqt — bu bizda bor eng qimmatli boylikdir. Uni qaytarib bo'lmaydi. Shuning uchun har bir daqiqani to'g'ri taqsimlash muvaffaqiyatning asosidir.</p>
+            
+            <!-- Rasm joyi -->
+            <img src="dars2-rasm.jpg" alt="Vaqtni boshqarish">
+            
+            <p>Pomodoro texnikasi — vaqtni 25 daqiqalik bloklarga bo'lib, har bir blokdan keyin 5 daqiqa dam olish usulidir. Bu diqqatni jamlashga yordam beradi.</p>
+            <p>Shuningdek, <b>Eisenhower matritsasi</b> yordamida vazifalarni muhimlik va shoshilinchlik darajasiga ko'ra ajratish mumkin.</p>
+        </div>
+
+        <!-- Izohlar -->
+        <div class="comments-section">
+            <h3><i class="fa-regular fa-comments"></i> Fikrlar (3)</h3>
+            
+            <div class="comment-box">
+                <textarea placeholder="O'z fikringizni qoldiring..."></textarea>
+                <button>Yuborish</button>
+            </div>
+
+            <div class="single-comment">
+                <div class="user"><i class="fa-solid fa-circle-user"></i> Bekzod_K <span class="date">2 soat oldin</span></div>
+                <p>Pomodoro texnikasini sinab ko'rdim, chindan ham ishlayapti! Rahmat!</p>
+            </div>
+            <div class="single-comment">
+                <div class="user"><i class="fa-solid fa-circle-user"></i> Umid_01 <span class="date">Kecha</span></div>
+                <p>Eisenhower matritsasi haqida batafsilroq yozib bersangiz. Qaysi biri birinchi o'rinda turishi kerak?</p>
+            </div>
+            <div class="single-comment">
+                <div class="user"><i class="fa-solid fa-circle-user"></i> Admin <span class="date">Kecha</span></div>
+                <p>Umid_01, birinchi navbatda "Muhim va shoshilinch" bo'lgan ishlarni qilasiz, keyin qolganlarini.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
