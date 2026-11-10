@@ -7,89 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .strategy-image-container {
-            text-align: center;
-            margin: 30px 0;
-            position: relative;
-        }
-        .strategy-image {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            border: 1px solid rgba(197, 160, 89, 0.5);
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .strategy-image:hover {
-            transform: scale(1.02);
-        }
-        /* Faqat shu sahifa uchun qo'shimcha dizayn */
-        .back-btn {
-            display: inline-block;
-            color: #c5a059;
-            text-decoration: none;
-            margin-bottom: 20px;
-            font-size: 14px;
-            border: 1px solid #c5a059;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .back-btn:hover {
-            background: #c5a059;
-            color: #0a0a0a;
-        }
-        .page-title {
-            text-align: center;
-            color: #c5a059;
-            font-size: 32px;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-        .quote-box {
-            text-align: center;
-nano strategiya.html            font-style: italic;
-            color: #b3b3b3;
-            margin-bottom: 40px;
-            padding: 0 20px;
-            border-left: 2px solid #c5a059;
-            border-right: 2px solid #c5a059;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 600px;
-        }
-        .checklist {
-            list-style: none;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .checklist li {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .checklist li:hover {
-            border-color: #c5a059;
-            background: rgba(197, 160, 89, 0.1);
-        }
-        .checklist li.completed {
-            text-decoration: line-through;
-            opacity: 0.5;
-            border-color: #333;
-        }
-        .checklist li i {
-            color: #c5a059;
-        }
-        .checklist li.completed i {
-            color: #4caf50; /* Yashil rang */
-        }
+        .page-title { text-align: center; color: #c5a059; font-size: 32px; margin-bottom: 30px; letter-spacing: 2px; }
+        .back-btn { display: inline-block; color: #c5a059; text-decoration: none; margin-bottom: 20px; font-size: 14px; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+        .back-btn:hover { background: #c5a059; color: #0a0a0a; }
+        
+        .lessons-grid { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; }
+        .lesson-card { display: flex; align-items: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.3); padding: 15px; border-radius: 8px; text-decoration: none; color: white; transition: 0.3s; }
+        .lesson-card:hover { background: rgba(197, 160, 89, 0.1); border-color: #c5a059; transform: translateX(10px); }
+        .lesson-card img { width: 120px; height: 80px; object-fit: cover; border-radius: 5px; margin-right: 20px; border: 1px solid #c5a059; }
+        .lesson-info h3 { color: #c5a059; margin-bottom: 5px; font-size: 18px; }
+        .lesson-info p { color: #b3b3b3; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -97,83 +24,41 @@ nano strategiya.html            font-style: italic;
     <div class="container">
         <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Orqaga</a>
         
-        <h1 class="page-title">STRATEGEYA</h1>
-        <div class="quote-box">
-            "Agar sizda reja bo'lmasa, siz boshqalarning rejasining bir qismiga aylanasiz."
+        <h1 class="page-title">STRATEGIYA DARSLARI</h1>
+        <p style="text-align: center; color: #b3b3b3; margin-bottom: 30px;">Muvaffaqiyat sari ilk qadamlar. O'zingizga kerakli mavzuni tanlang:</p>
+
+        <div class="lessons-grid">
+            
+            <!-- 1-Dars -->
+            <a href="dars-1.html" class="lesson-card fade-in">
+                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+1" alt="Dars 1">
+                <div class="lesson-info">
+                    <h3>1. Hayotiy maqsadni aniqlash</h3>
+                    <p>Nima uchun kurashayotganingizni bilasizmi?</p>
+                </div>
+            </a>
+
+            <!-- 2-Dars -->
+            <a href="dars-2.html" class="lesson-card fade-in">
+                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+2" alt="Dars 2">
+                <div class="lesson-info">
+                    <h3>2. Vaqtni boshqarish (Time Management)</h3>
+                    <p>24 soatni qanday qilib samarali o'tkazish mumkin?</p>
+                </div>
+            </a>
+
+            <!-- 3-Dars -->
+            <a href="dars-3.html" class="lesson-card fade-in">
+                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+3" alt="Dars 3">
+                <div class="lesson-info">
+                    <h3>3. Moliyaviy savodxonlik</h3>
+                    <p>Pulni boshqarish va jamg'arish sirlari.</p>
+                </div>
+            </a>
+
         </div>
+    </div>
 
-        <ul class="checklist" id="strategy-list">
-            <li onclick="toggleTask(this)"><i class="fa-regular fa-square"></i> 1. 5 yillik uzoq muddatli maqsadni aniqlash</li>
-            <li onclick="toggleTask(this)"><i class="fa-regular fa-square"></i> 2. Har kuni ertalab kun tartibini tuzish</li>
-            <li onclick="toggleTask(this)"><i class="fa-regular fa-square"></i> 3. Vaqtni to'g'ri taqsimlash (Time blocking)</li>
-            <li onclick="toggleTask(this)"><i class="fa-regular fa-square"></i> 4. Moliyaviy savodxonlikni oshirish</li>
-            <li onclick="toggleTask(this)"><i class="fa-regular fa-square"></i> 5. Har hafta yakunida tahlil (Retrospektiva) qilish</li>
-        </ul>
-
-        <!-- Aloqa qismi -->
-        <section class="contact-section fade-in" style="margin-top: 50px;">
-            <h2>ALOQA</h2>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="mailto:emailingiz@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-        </section>
-    </div>        <!-- Strategiya Rasmi -->
-        <div class="strategy-image-container fade-in">
-            <img src="0d397782-4433-4c6c-884f-c7d171467417.webp" alt="Muvaffaqiyat sari yo'l" class="strategy-image">
-        </div>
-
-    <script>
-        // Ro'yxatni belgilash funksiyasi
-        function toggleTask(element) {
-            element.classList.toggle('completed');
-            const icon = element.querySelector('i');
-            if (element.classList.contains('completed')) {
-                icon.classList.replace('fa-square', 'fa-square-check');
-            } else {
-                icon.classList.replace('fa-square-check', 'fa-square');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategiya | Muvaffaqiyat Arxitektori</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .strategy-image-container {
-            text-align: center;
-            margin: 30px 0;
-            position: relative;
-        }
-        .strategy-image {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            border: 1px solid rgba(197, 160, 89, 0.5);
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .strategy-image:hover {
-            transform: scale(1.02);
-        }
-        /* Faqat shu sahifa uchun qo'shimcha dizayn */
-        .back-btn {
-            display: inline-block;
-            color: #c5a059;
-            text-decoration: none;
-            margin-bottom: 20px;
-            font-size: 14px;
-            border: 1px solid #c5a059;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .back-btn:hover {
-            background: #c5a059;
