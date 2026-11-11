@@ -57,23 +57,16 @@
             <p><b>Imo-ishora:</b> Ko'z bilan aloqa qilish, to'g'ri qomat tutish va qo'llarni to'g'ri ishlatish. O'zingizni tutishingiz bilan atrofdagilarga ishonch uyg'otasiz.</p>
         </div>
 
+              <!-- Izohlar -->
         <div class="comments-section">
-            <h3><i class="fa-regular fa-comments"></i> Fikrlar (2)</h3>
+            <h3><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count">0</span>)</h3>
             
             <div class="comment-box">
-                <textarea placeholder="O'z fikringizni qoldiring..."></textarea>
-                <button>Yuborish</button>
+                <input type="text" id="username-input" placeholder="Ismingiz..." style="background: #111; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; font-family: inherit; margin-bottom: 5px; width: 100%; box-sizing: border-box;">
+                <textarea id="comment-input" placeholder="O'z fikringizni qoldiring..."></textarea>
+                <button onclick="addComment()">Yuborish</button>
             </div>
 
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Behruz_M <span class="date">1 soat oldin</span></div>
-                <p>Nutq madaniyati haqidagi fikrlar juda to'g'ri. Ba'zida odamning qiyofasi chiroyli, lekin gapirsa hamma narsa buziladi.</p>
-            </div>
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Sherzod_A <span class="date">Kecha</span></div>
-                <p>Ko'z bilan aloqa qilishni o'rganish uchun qanday mashqlar bor?</p>
-            </div>
+            <!-- Izohlar shu yerga avtomatik yuklanadi -->
+            <div id="comments-list"></div>
         </div>
-    </div>
-</body>
-</html>

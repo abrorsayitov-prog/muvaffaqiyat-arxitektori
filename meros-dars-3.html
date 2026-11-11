@@ -57,23 +57,16 @@
             <p><b>"Hech kim kambag'al emaski, boshqalarga yordam bera olmaydigan"</b> — deydi donishmandlar. Kichik yaxshilik ham katta meros bo'lib qolishi mumkin.</p>
         </div>
 
+             <!-- Izohlar -->
         <div class="comments-section">
-            <h3><i class="fa-regular fa-comments"></i> Fikrlar (2)</h3>
+            <h3><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count">0</span>)</h3>
             
             <div class="comment-box">
-                <textarea placeholder="O'z fikringizni qoldiring..."></textarea>
-                <button>Yuborish</button>
+                <input type="text" id="username-input" placeholder="Ismingiz..." style="background: #111; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; font-family: inherit; margin-bottom: 5px; width: 100%; box-sizing: border-box;">
+                <textarea id="comment-input" placeholder="O'z fikringizni qoldiring..."></textarea>
+                <button onclick="addComment()">Yuborish</button>
             </div>
 
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Nodir_Pro <span class="date">1 soat oldin</span></div>
-                <p>Men har oy o'z daromadimning bir qismini xayriyaga ajratishga qaror qildim. Bu ruhiyatimni ham ko'taradi.</p>
-            </div>
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Jasur_01 <span class="date">Kecha</span></div>
-                <p>Xayriya qilishni qayerdan boshlash kerak? Eng kichik qadam nima bo'lishi mumkin?</p>
-            </div>
+            <!-- Izohlar shu yerga avtomatik yuklanadi -->
+            <div id="comments-list"></div>
         </div>
-    </div>
-</body>
-</html>

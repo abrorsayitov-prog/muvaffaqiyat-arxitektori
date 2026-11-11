@@ -59,24 +59,16 @@
             <p>Unutmang, eng qiyin qismi — bu boshlash. Birinchi qadamni tashlang, qolganini tana o'zi davom ettiradi! va albatta ibodatni ham o'z vaqtida bajaring, sport tanani chiniqtirsa ibodat ruxingizni chiniqtiradi va intizomli bo'lishga juda katta hissa qo'shadi!</p>
         </div>
 
-        <!-- Izohlar -->
+               <!-- Izohlar -->
         <div class="comments-section">
-            <h3><i class="fa-regular fa-comments"></i> Fikrlar (2)</h3>
+            <h3><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count">0</span>)</h3>
             
             <div class="comment-box">
-                <textarea placeholder="O'z fikringizni qoldiring..."></textarea>
-                <button>Yuborish</button>
+                <input type="text" id="username-input" placeholder="Ismingiz..." style="background: #111; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; font-family: inherit; margin-bottom: 5px; width: 100%; box-sizing: border-box;">
+                <textarea id="comment-input" placeholder="O'z fikringizni qoldiring..."></textarea>
+                <button onclick="addComment()">Yuborish</button>
             </div>
 
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Akmal_Strong <span class="date">1 kun oldin</span></div>
-                <p>Sport zali a'zoligini oldim, haftada 3 marta boraman. Ruhiyatim butunlay o'zgardi!</p>
-            </div>
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Sanjar_88 <span class="date">2 kun oldin</span></div>
-                <p>Uyda qanday mashqlar qilsa bo'ladi? Hech qanday jihoz yo'q.</p>
-            </div>
+            <!-- Izohlar shu yerga avtomatik yuklanadi -->
+            <div id="comments-list"></div>
         </div>
-    </div>
-</body>
-</html>

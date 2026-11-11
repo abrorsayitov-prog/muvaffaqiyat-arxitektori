@@ -57,23 +57,16 @@
             <p><b>Oltin qoida:</b> "Kostyumingiz sizni emas, siz kostyumingizni ko'tarib turishingiz kerak".</p>
         </div>
 
+               <!-- Izohlar -->
         <div class="comments-section">
-            <h3><i class="fa-regular fa-comments"></i> Fikrlar (2)</h3>
+            <h3><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count">0</span>)</h3>
             
             <div class="comment-box">
-                <textarea placeholder="O'z fikringizni qoldiring..."></textarea>
-                <button>Yuborish</button>
+                <input type="text" id="username-input" placeholder="Ismingiz..." style="background: #111; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; font-family: inherit; margin-bottom: 5px; width: 100%; box-sizing: border-box;">
+                <textarea id="comment-input" placeholder="O'z fikringizni qoldiring..."></textarea>
+                <button onclick="addComment()">Yuborish</button>
             </div>
 
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Firdavs_S <span class="date">4 soat oldin</span></div>
-                <p>Kostyum kiyishni endi o'rganyapman. Ayniqsa yeng uzunligi haqidagi maslahat juda asqotdi!</p>
-            </div>
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Kamol_ID <span class="date">Kecha</span></div>
-                <p>To'q ko'k rangdagi kostyumga qanday rangdagi galstuk mos keladi?</p>
-            </div>
+            <!-- Izohlar shu yerga avtomatik yuklanadi -->
+            <div id="comments-list"></div>
         </div>
-    </div>
-</body>
-</html>

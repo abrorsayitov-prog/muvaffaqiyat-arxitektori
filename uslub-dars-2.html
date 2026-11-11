@@ -57,23 +57,16 @@
             <p><b>Kamar va poyabzal:</b> Ularning rangi har doim bir-biriga mos kelishi kerak. Qora kamar — qora tufli, jigarrang kamar — jigarrang tufli.</p>
         </div>
 
+               <!-- Izohlar -->
         <div class="comments-section">
-            <h3><i class="fa-regular fa-comments"></i> Fikrlar (2)</h3>
+            <h3><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count">0</span>)</h3>
             
             <div class="comment-box">
-                <textarea placeholder="O'z fikringizni qoldiring..."></textarea>
-                <button>Yuborish</button>
+                <input type="text" id="username-input" placeholder="Ismingiz..." style="background: #111; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; font-family: inherit; margin-bottom: 5px; width: 100%; box-sizing: border-box;">
+                <textarea id="comment-input" placeholder="O'z fikringizni qoldiring..."></textarea>
+                <button onclick="addComment()">Yuborish</button>
             </div>
 
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Otabek_G <span class="date">2 soat oldin</span></div>
-                <p>Men ham yaqinda klassik soat oldim. Haqiqatan ham qiyofaga jiddiylik qo'shar ekan.</p>
-            </div>
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Timur_S <span class="date">Kecha</span></div>
-                <p>Kamarning poyabzalga mos kelishi haqidagi qoidani birinchi marta eshitdim, rahmat!</p>
-            </div>
+            <!-- Izohlar shu yerga avtomatik yuklanadi -->
+            <div id="comments-list"></div>
         </div>
-    </div>
-</body>
-</html>
