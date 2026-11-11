@@ -5,45 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muvaffaqiyat Arxitektori | Shaxsiy Rivojlanish</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        /* =========================================
-           MODAL OYNA (Batafsil ma'lumot uchun)
-           ========================================= */
-        .modal {
-            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
-            width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);
-            overflow-y: auto; backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            background-color: #111; margin: 5% auto; padding: 30px;
-            border: 1px solid #c5a059; border-radius: 10px;
-            width: 90%; max-width: 800px; position: relative;
-            box-shadow: 0 0 30px rgba(197, 160, 89, 0.3);
-            animation: slideDown 0.4s ease;
-        }
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .close-btn {
-            position: absolute; top: 15px; right: 20px;
-            color: #c5a059; font-size: 30px; font-weight: bold;
-            cursor: pointer; transition: 0.3s;
-        }
-        .close-btn:hover { color: #fff; }
-        .modal-title { color: #c5a059; margin-bottom: 20px; font-size: 24px; border-bottom: 1px solid rgba(197,160,89,0.3); padding-bottom: 10px; }
-        .modal-video { width: 100%; aspect-ratio: 16/9; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333; }
-        .modal-text { color: #d1d1d1; line-height: 1.8; margin-bottom: 30px; }
-        .modal-text img { width: 100%; border-radius: 8px; margin: 15px 0; }
-        
-        /* Modal ichidagi izohlar */
-        .comment-box { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-        .comment-box input, .comment-box textarea { background: #000; border: 1px solid #333; color: white; padding: 12px; border-radius: 5px; font-family: inherit; }
-        .comment-box textarea { min-height: 80px; resize: vertical; }
-        .comment-box button { align-self: flex-end; background: #c5a059; color: #000; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; }
-        .comment-box button:hover { background: #e0b96b; }    
+    
     <style>
         /* =========================================
-           ASOSIY DIZAYN
+           ASOSIY DIZAYN (Barchasi shu yerda)
            ========================================= */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #0a0a0a; color: #ffffff; overflow-x: hidden; }
@@ -55,8 +20,7 @@
             background-size: 30px 30px; z-index: -1;
         }
 
-        .section-container { max-width: 900px; margin: 0 auto; padding: 80px 20px; position: relative; }
-        
+        .section-container { max-width: 900px; margin: 0 auto; padding: 60px 20px; position: relative; }
         .section-title { text-align: center; color: #c5a059; font-size: 32px; letter-spacing: 3px; margin-bottom: 40px; text-transform: uppercase; text-shadow: 0 0 15px rgba(197, 160, 89, 0.3); }
 
         /* =========================================
@@ -78,13 +42,13 @@
         /* =========================================
            KARTOCHKALAR (Bo'limlar)
            ========================================= */
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 40px; }
-        .card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 10px; padding: 25px; transition: 0.3s; }
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 10px; padding: 25px; transition: 0.3s; display: flex; flex-direction: column; }
         .card:hover { border-color: #c5a059; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(197, 160, 89, 0.15); }
         .card-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c5a059; }
         .card h3 { color: #c5a059; font-size: 22px; margin-bottom: 10px; }
-        .card p { color: #b3b3b3; font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
-        .read-more { display: inline-block; color: #0a0a0a; background: #c5a059; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .card p { color: #b3b3b3; font-size: 15px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+        .read-more { display: inline-block; color: #0a0a0a; background: #c5a059; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; text-align: center; margin-top: auto; }
         .read-more:hover { background: #e0b96b; box-shadow: 0 0 15px rgba(197, 160, 89, 0.5); }
 
         /* =========================================
@@ -96,12 +60,11 @@
         .social-links a:hover { background-color: #c5a059; color: #0a0a0a; box-shadow: 0 0 15px rgba(197, 160, 89, 0.5); }
 
         /* =========================================
-           ANIMATSIYALAR
+           ANIMATSIYALAR VA TIL MENYUSI
            ========================================= */
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* Til Menyusi */
         .top-lang { position: absolute; top: 20px; right: 20px; z-index: 100; }
         .lang-btn { background: transparent; color: #c5a059; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; }
         .lang-btn:hover { background: rgba(197, 160, 89, 0.1); }
@@ -112,7 +75,7 @@
     <div class="bg-grid"></div>
 
     <!-- TIL MENYUSI -->
-    <div class="top-lang">
+    <div class="top-lang fade-in">
         <button class="lang-btn"><i class="fa-solid fa-globe"></i> Tillar</button>
     </div>
 
@@ -135,16 +98,16 @@
         <h2 class="section-title fade-in">Strategiya</h2>
         <div class="grid-cards">
             <div class="card fade-in">
-                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Strategiya+1" class="card-img" alt="Dars 1">
+                <img src="strategiya-dars1.jpg" class="card-img" alt="Dars 1" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c5a059?text=1-Dars'">
                 <h3>1. Hayotiy maqsadni aniqlash</h3>
                 <p>Muvaffaqiyat tasodifan kelmaydi. U aniq belgilangan maqsad va unga erishish uchun qilingan tinimsiz harakatlardan tarkib topadi.</p>
-                <a href="javascript:void(0)" class="read-more" onclick="openModal('1. Hayotiy maqsadni aniqlash', 'https://www.youtube.com/embed/dQw4w9WgXcQ', '<p>Muvaffaqiyat tasodifan kelmaydi. U aniq belgilangan maqsad va unga erishish uchun qilingan tinimsiz harakatlardan tarkib topadi.</p><img src=\'https://via.placeholder.com/600x300/1a1a1a/c5a059?text=Maqsad\' style=\'width:100%; border-radius:8px; margin-top:10px;\'><p>SMART texnikasidan foydalanib, o\'z oldingizga aniq maqsadlar qo\'ying.</p>')">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="dars-1.html" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="card fade-in">
-                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Strategiya+2" class="card-img" alt="Dars 2">
+                <img src="strategiya-dars2.jpg" class="card-img" alt="Dars 2" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c5a059?text=2-Dars'">
                 <h3>2. Vaqtni boshqarish</h3>
                 <p>Vaqt — bu bizda bor eng qimmatli boylikdir. Uni qaytarib bo'lmaydi. Har bir daqiqani to'g'ri taqsimlash muvaffaqiyat asosidir.</p>
-                <a href="javascript:void(0)" class="read-more" onclick="openModal('2. Vaqtni boshqarish', 'https://www.youtube.com/embed/dQw4w9WgXcQ', '<p>Vaqt — bu bizda bor eng qimmatli boylikdir. Uni qaytarib bo\'lmaydi. Har bir daqiqani to\'g\'ri taqsimlash muvaffaqiyat asosidir.</p><img src=\'https://via.placeholder.com/600x300/1a1a1a/c5a059?text=Vaqt\' style=\'width:100%; border-radius:8px; margin-top:10px;\'><p>Pomodoro texnikasi va Eisenhower matritsasi yordamida vaqtingizni boshqaring.</p>')">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="dars-2.html" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -154,16 +117,16 @@
         <h2 class="section-title fade-in">Intizom</h2>
         <div class="grid-cards">
             <div class="card fade-in">
-                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Intizom+1" class="card-img" alt="Dars 1">
+                <img src="intizom-dars1.jpg" class="card-img" alt="Dars 1" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Intizom+1'">
                 <h3>1. Aqliy matonat</h3>
                 <p>Intizom — bu kayfiyatga qarab emas, balki maqsadga qarab harakat qilishdir. Qiyinchiliklar oldida taslim bo'lmaslikni o'rgatadi.</p>
-               <a href="javascript:void(0)" class="read-more" onclick="openModal('1. Aqliy matonat', 'https://www.youtube.com/embed/dQw4w9WgXcQ', '<p>Intizom — bu kayfiyatga qarab emas, balki maqsadga qarab harakat qilishdir. Qiyinchiliklar oldida taslim bo\'lmaslikni o\'rgatadi.</p><img src=\'https://via.placeholder.com/600x300/1a1a1a/c5a059?text=Matonat\' style=\'width:100%; border-radius:8px; margin-top:10px;\'><p>Har kuni kichik qiyinchiliklarga dosh berish orqali irodani mustahkamlang.</p>')">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="intizom-dars-1.html" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="card fade-in">
-                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Intizom+2" class="card-img" alt="Dars 2">
+                <img src="intizom-dars2.jpg" class="card-img" alt="Dars 2" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Intizom+2'">
                 <h3>2. Erta turish odati</h3>
                 <p>Ertalabki 1 soat — bu butun kuningizni o'zgartira oladigan sehrli vaqtdir. Dunyo uyg'onishidan oldin uyg'onish sirlari.</p>
-                <a href="javascript:void(0)" class="read-more" onclick="openModal('2. Erta turish odati', 'https://www.youtube.com/embed/dQw4w9WgXcQ', '<p>Ertalabki 1 soat — bu butun kuningizni o\'zgartira oladigan sehrli vaqtdir. Dunyo uyg\'onishidan oldin uyg\'onish sirlari.</p><img src=\'https://via.placeholder.com/600x300/1a1a1a/c5a059?text=Erta+Turish\' style=\'width:100%; border-radius:8px; margin-top:10px;\'><p>Erta turish uchun kechqurun erta uxlashga odatlaning.</p>')">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="intizom-dars-2.html" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -173,10 +136,10 @@
         <h2 class="section-title fade-in">Uslub</h2>
         <div class="grid-cards">
             <div class="card fade-in">
-                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Uslub+1" class="card-img" alt="Dars 1">
+                <img src="uslub-dars1.jpg" class="card-img" alt="Dars 1" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Uslub+1'">
                 <h3>1. Erkaklar kostyumi</h3>
                 <p>Kostyum — bu shunchaki kiyim emas, bu sizning jamiyatdagi mavqeingiz va o'zingizga bo'lgan hurmatingizning ko'zgusidir.</p>
-                <a href="javascript:void(0)" class="read-more" onclick="openModal('1. Erkaklar kostyumi', 'https://www.youtube.com/embed/dQw4w9WgXcQ', '<p>Kostyum — bu shunchaki kiyim emas, bu sizning jamiyatdagi mavqeingiz va o\'zingizga bo\'lgan hurmatingizning ko\'zgusidir.</p><img src=\'https://via.placeholder.com/600x300/1a1a1a/c5a059?text=Kostyum\' style=\'width:100%; border-radius:8px; margin-top:10px;\'><p>Kostyum tanlashda uning sizga to\'g\'ri kelishi va ranglar uyg\'unligiga e\'tibor bering.</p>')">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="uslub-dars-1.html" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -186,10 +149,10 @@
         <h2 class="section-title fade-in">Meros</h2>
         <div class="grid-cards">
             <div class="card fade-in">
-                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Meros+1" class="card-img" alt="Dars 1">
+                <img src="meros-dars1.jpg" class="card-img" alt="Dars 1" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Meros+1'">
                 <h3>1. Qadriyatlar tizimi</h3>
                 <p>Haqiqiy meros — bu sizning qadriyatlaringiz, tamoyillaringiz va sizdan keyin qoladigan yaxshi nomingizdir.</p>
-                <a href="javascript:void(0)" class="read-more" onclick="openModal('1. Qadriyatlar tizimi', 'https://www.youtube.com/embed/dQw4w9WgXcQ', '<p>Haqiqiy meros — bu sizning qadriyatlaringiz, tamoyillaringiz va sizdan keyin qoladigan yaxshi nomingizdir.</p><img src=\'https://via.placeholder.com/600x300/1a1a1a/c5a059?text=Qadriyat\' style=\'width:100%; border-radius:8px; margin-top:10px;\'><p>Inson o\'z qadriyatlarini aniqlab olishi juda muhim. Qiyin vaziyatlarda aynan qadriyatlar to\'g\'ri yo\'lni ko\'rsatadi.</p>')">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="meros-dars-1.html" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -220,68 +183,5 @@
             elements.forEach(el => observer.observe(el));
         });
     </script>
-        // Modal oynani ochish funksiyasi
-        function openModal(title, videoUrl, contentHtml) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalVideo').src = videoUrl;
-            document.getElementById('modalText').innerHTML = contentHtml;
-            document.getElementById('lessonModal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Orqa fon skroll bo'lmasligi uchun
-        }
-
-        // Modal oynani yopish funksiyasi
-        function closeModal() {
-            document.getElementById('lessonModal').style.display = 'none';
-            document.getElementById('modalVideo').src = ''; // Videoni to'xtatish
-            document.body.style.overflow = 'auto';
-        }
-
-        // Oynadan tashqariga bosganda yopilish
-        window.onclick = function(event) {
-            let modal = document.getElementById('lessonModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
-        // Izoh qo'shish funksiyasi (vaqtinchalik, sahifa yangilansa o'chadi)
-        function addComment() {
-            let name = document.getElementById('username-input').value;
-            let text = document.getElementById('comment-input').value;
-            if(!name || !text) return alert("Iltimos, ism va izohni yozing!");
-            
-            let list = document.getElementById('comments-list');
-            let div = document.createElement('div');
-            div.className = 'single-comment';
-            div.innerHTML = `<div class="user" style="color:#c5a059; font-weight:bold; margin-top:10px;">${name} <span style="color:#666; font-size:12px; margin-left:10px;">Hozir</span></div><p style="color:#aaa; font-size:14px;">${text}</p>`;
-            list.prepend(div);
-            
-            document.getElementById('comment-count').innerText = parseInt(document.getElementById('comment-count').innerText) + 1;
-            document.getElementById('username-input').value = '';
-            document.getElementById('comment-input').value = '';
-        }    <!-- MODAL OYNA (Barcha darslar uchun bitta) -->
-    <div id="lessonModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle" class="modal-title">Dars nomi</h2>
-            
-            <!-- Video (YouTube havolasi) -->
-            <iframe id="modalVideo" class="modal-video" src="" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            
-            <!-- Matn va Rasm -->
-            <div id="modalText" class="modal-text">
-                <!-- Matn va rasmlar shu yerga yuklanadi -->
-            </div>
-
-            <!-- Izohlar qismi -->
-            <h3 style="color:#c5a059; margin-bottom: 10px;"><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count">0</span>)</h3>
-            <div class="comment-box">
-                <input type="text" id="username-input" placeholder="Ismingiz...">
-                <textarea id="comment-input" placeholder="O'z fikringizni qoldiring..."></textarea>
-                <button onclick="addComment()">Yuborish</button>
-            </div>
-            <div id="comments-list"></div>
-        </div>
-    </div>
 </body>
 </html>
