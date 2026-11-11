@@ -3,125 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muvaffaqiyat Arxitektori</title>
+    <title>Muvaffaqiyat Arxitektori | Shaxsiy Rivojlanish</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+        /* =========================================
+           ASOSIY DIZAYN
+           ========================================= */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0a0a0a; color: #ffffff; display: flex; justify-content: center; padding: 20px; }
-        .container { max-width: 800px; width: 100%; border: 1px solid #c5a059; padding: 40px 20px; position: relative; background-image: linear-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.05) 1px, transparent 1px); background-size: 20px 20px; }
+        body { background-color: #0a0a0a; color: #ffffff; overflow-x: hidden; }
         
-        /* Til tanlash menyusi */
-        .top-nav { display: flex; justify-content: flex-end; padding: 10px 20px; position: absolute; top: 0; right: 0; width: 100%; z-index: 100; }
-        .lang-dropdown { position: relative; display: inline-block; }
-        .lang-btn { background: transparent; color: #c5a059; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
-        .lang-btn:hover { background: rgba(197, 160, 89, 0.1); }
-        .lang-menu { display: none; position: absolute; right: 0; background-color: #1a1a1a; min-width: 120px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); border: 1px solid #c5a059; border-radius: 5px; z-index: 1; margin-top: 5px; }
-        .lang-menu a { color: #fff; padding: 10px 15px; text-decoration: none; display: block; font-size: 14px; transition: 0.3s; }
-        .lang-menu a:hover { background-color: #c5a059; color: #0a0a0a; }
-        .lang-dropdown:hover .lang-menu { display: block; }
+        /* Orqa fondagi chizmalar */
+        .bg-grid {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px; z-index: -1;
+        }
 
-        /* Sarlavha va rasm */
-        .hero-section { text-align: center; margin-bottom: 40px; margin-top: 20px; }
-        .hero-section h1 { font-size: 24px; color: #c5a059; letter-spacing: 2px; line-height: 1.4; text-shadow: 0 0 10px rgba(197, 160, 89, 0.3); }
-        .hero-section h1 span { font-size: 18px; color: #ffffff; font-weight: 300; }
-        .main-image-container { margin-top: 30px; display: flex; justify-content: center; }
-        .main-image { width: 250px; height: 300px; object-fit: cover; border: 2px solid #c5a059; border-radius: 5px; box-shadow: 0 0 20px rgba(197, 160, 89, 0.2); transition: transform 0.3s ease; }
-        .main-image:hover { transform: scale(1.02); }
+        .section-container { max-width: 900px; margin: 0 auto; padding: 80px 20px; position: relative; }
+        
+        .section-title { text-align: center; color: #c5a059; font-size: 32px; letter-spacing: 3px; margin-bottom: 40px; text-transform: uppercase; text-shadow: 0 0 15px rgba(197, 160, 89, 0.3); }
 
-        /* Kartochkalar */
-        .sections-grid { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
-        .card { display: flex; align-items: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.3); padding: 15px 20px; text-decoration: none; color: white; border-radius: 8px; transition: all 0.4s ease; cursor: pointer; }
-        .card:hover { background: rgba(197, 160, 89, 0.1); border-color: #c5a059; transform: translateX(10px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
-        .card-icon { font-size: 30px; color: #c5a059; margin-right: 20px; width: 50px; text-align: center; }
-        .card-content h2 { font-size: 18px; color: #c5a059; letter-spacing: 1px; margin-bottom: 5px; }
-        .card-content p { font-size: 14px; color: #b3b3b3; }
+        /* =========================================
+           BOSH SAHIFA (HERO)
+           ========================================= */
+        .hero { text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+        .hero h1 { font-size: 28px; color: #c5a059; letter-spacing: 2px; line-height: 1.5; margin-bottom: 20px; }
+        .hero h1 span { font-size: 20px; color: #ffffff; font-weight: 300; }
+        .hero-img { width: 280px; height: 350px; object-fit: cover; border: 2px solid #c5a059; border-radius: 10px; box-shadow: 0 0 30px rgba(197, 160, 89, 0.3); margin-bottom: 40px; transition: transform 0.4s; }
+        .hero-img:hover { transform: scale(1.05); }
 
-        /* Aloqa */
-        .contact-section { text-align: center; border-top: 1px solid rgba(197, 160, 89, 0.3); padding-top: 30px; }
-        .contact-section h2 { color: #c5a059; letter-spacing: 2px; margin-bottom: 10px; }
-        .contact-section p { color: #b3b3b3; margin-bottom: 20px; font-size: 14px; }
-        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .social-links a { color: #c5a059; text-decoration: none; font-size: 16px; border: 1px solid #c5a059; padding: 10px 20px; border-radius: 5px; transition: all 0.3s ease; }
+        /* =========================================
+           NAVIGATSIYA (Menyu)
+           ========================================= */
+        .nav-menu { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
+        .nav-btn { color: #c5a059; text-decoration: none; border: 1px solid #c5a059; padding: 12px 25px; border-radius: 5px; font-weight: bold; transition: 0.3s; background: rgba(0,0,0,0.5); }
+        .nav-btn:hover { background: #c5a059; color: #0a0a0a; box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); }
+
+        /* =========================================
+           KARTOCHKALAR (Bo'limlar)
+           ========================================= */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 10px; padding: 25px; transition: 0.3s; }
+        .card:hover { border-color: #c5a059; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(197, 160, 89, 0.15); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c5a059; }
+        .card h3 { color: #c5a059; font-size: 22px; margin-bottom: 10px; }
+        .card p { color: #b3b3b3; font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+        .read-more { display: inline-block; color: #0a0a0a; background: #c5a059; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .read-more:hover { background: #e0b96b; box-shadow: 0 0 15px rgba(197, 160, 89, 0.5); }
+
+        /* =========================================
+           ALOQA
+           ========================================= */
+        .contact-box { text-align: center; margin-top: 40px; }
+        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .social-links a { color: #c5a059; text-decoration: none; font-size: 16px; border: 1px solid #c5a059; padding: 12px 25px; border-radius: 5px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; }
         .social-links a:hover { background-color: #c5a059; color: #0a0a0a; box-shadow: 0 0 15px rgba(197, 160, 89, 0.5); }
 
-        /* Animatsiya */
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        /* =========================================
+           ANIMATSIYALAR
+           ========================================= */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Til Menyusi */
+        .top-lang { position: absolute; top: 20px; right: 20px; z-index: 100; }
+        .lang-btn { background: transparent; color: #c5a059; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; }
+        .lang-btn:hover { background: rgba(197, 160, 89, 0.1); }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <!-- Til tanlash menyusi -->
-        <div class="top-nav">
-            <div class="lang-dropdown">
-                <button class="lang-btn">
-                    <i class="fa-solid fa-globe"></i> Tillar
-                </button>
-                <div class="lang-menu">
-                    <a href="#" onclick="alert('O\'zbek tili tanlandi')">O'zbekcha</a>
-                    <a href="#" onclick="alert('Rus tili tanlandi')">Русский</a>
-                    <a href="#" onclick="alert('Ingliz tili tanlandi')">English</a>
-                </div>
-            </div>
-        </div>
+    <div class="bg-grid"></div>
 
-        <!-- Sarlavha -->
-        <header class="hero-section">
-            <h1>MUVAFFAQIYAT POG'ONALARI:<br><span>ERKAKLARNING MUVAFFAQIYATLI ZINASI</span></h1>
-            
-            <!-- Rasm joyi -->
-            <div class="main-image-container">
-                <img src="Pasted image.png" alt="Muvaffaqiyat Arxitektori" class="main-image">
-            </div>
-        </header>
-
-        <!-- Bo'limlar -->
-        <section class="sections-grid">
-            <a href="strategiya.html" class="card fade-in">
-                <div class="card-icon"><i class="fa-solid fa-chess-queen"></i></div>
-                <div class="card-content"><h2>STRATEGEYA</h2><p>Maqsadni belgilash va yutuq rejasi</p></div>
-            </a>
-
-            <a href="intizom.html" class="card fade-in">
-                <div class="card-icon"><i class="fa-solid fa-dumbbell"></i></div>
-                <div class="card-content"><h2>INTIZOM</h2><p>Barqaror harakat va aqliy matonat</p></div>
-            </a>
-
-            <a href="uslub.html" class="card fade-in">
-                <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
-                <div class="card-content"><h2>USLUB</h2><p>Libos mukammalligi va o'zini namoyish etish</p></div>
-            </a>
-
-            <a href="meros.html" class="card fade-in">
-                <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
-                <div class="card-content"><h2>MEROS</h2><p>Bardoshli qadriyat yaratish va uzoq muddatli ta'sir</p></div>
-            </a>
-        </section>
-
-        <!-- Aloqa -->
-        <section class="contact-section fade-in" id="aloqa">
-            <h2>ALOQA</h2>
-            <p>Men bilan bog'lanish uchun quyidagi tarmoqlardan foydalaning:</p>
-            <div class="social-links">
-                <a href="https://t.me/abror_sayitov" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                <a href="https://instagram.com/abror.sayitov" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="tel:+998979250331"><i class="fa-solid fa-phone"></i> Telefon</a>
-                <a href="mailto:abrorsayitov@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-            </div>
-        </section>
-
+    <!-- TIL MENYUSI -->
+    <div class="top-lang">
+        <button class="lang-btn"><i class="fa-solid fa-globe"></i> Tillar</button>
     </div>
 
+    <!-- 1. BOSH SAHIFA -->
+    <header class="hero">
+        <h1 class="fade-in">MUVAFFAQIYAT ARXITEKTORI:<br><span>ERKAKLARNING HASHAMATLI CHIZMASI</span></h1>
+        <img src="Pasted image.png" alt="Asosiy Rasm" class="hero-img fade-in">
+        
+        <div class="nav-menu fade-in">
+            <a href="#strategiya" class="nav-btn">STRATEGIYA</a>
+            <a href="#intizom" class="nav-btn">INTIZOM</a>
+            <a href="#uslub" class="nav-btn">USLUB</a>
+            <a href="#meros" class="nav-btn">MEROS</a>
+            <a href="#aloqa" class="nav-btn">ALOQA</a>
+        </div>
+    </header>
+
+    <!-- 2. STRATEGIYA BO'LIMI -->
+    <section id="strategiya" class="section-container">
+        <h2 class="section-title fade-in">Strategiya</h2>
+        <div class="grid-cards">
+            <div class="card fade-in">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Strategiya+1" class="card-img" alt="Dars 1">
+                <h3>1. Hayotiy maqsadni aniqlash</h3>
+                <p>Muvaffaqiyat tasodifan kelmaydi. U aniq belgilangan maqsad va unga erishish uchun qilingan tinimsiz harakatlardan tarkib topadi.</p>
+                <a href="#" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="card fade-in">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Strategiya+2" class="card-img" alt="Dars 2">
+                <h3>2. Vaqtni boshqarish</h3>
+                <p>Vaqt — bu bizda bor eng qimmatli boylikdir. Uni qaytarib bo'lmaydi. Har bir daqiqani to'g'ri taqsimlash muvaffaqiyat asosidir.</p>
+                <a href="#" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INTIZOM BO'LIMI -->
+    <section id="intizom" class="section-container" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title fade-in">Intizom</h2>
+        <div class="grid-cards">
+            <div class="card fade-in">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Intizom+1" class="card-img" alt="Dars 1">
+                <h3>1. Aqliy matonat</h3>
+                <p>Intizom — bu kayfiyatga qarab emas, balki maqsadga qarab harakat qilishdir. Qiyinchiliklar oldida taslim bo'lmaslikni o'rgatadi.</p>
+                <a href="#" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="card fade-in">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Intizom+2" class="card-img" alt="Dars 2">
+                <h3>2. Erta turish odati</h3>
+                <p>Ertalabki 1 soat — bu butun kuningizni o'zgartira oladigan sehrli vaqtdir. Dunyo uyg'onishidan oldin uyg'onish sirlari.</p>
+                <a href="#" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. USLUB BO'LIMI -->
+    <section id="uslub" class="section-container">
+        <h2 class="section-title fade-in">Uslub</h2>
+        <div class="grid-cards">
+            <div class="card fade-in">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Uslub+1" class="card-img" alt="Dars 1">
+                <h3>1. Erkaklar kostyumi</h3>
+                <p>Kostyum — bu shunchaki kiyim emas, bu sizning jamiyatdagi mavqeingiz va o'zingizga bo'lgan hurmatingizning ko'zgusidir.</p>
+                <a href="#" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MEROS BO'LIMI -->
+    <section id="meros" class="section-container" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title fade-in">Meros</h2>
+        <div class="grid-cards">
+            <div class="card fade-in">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Meros+1" class="card-img" alt="Dars 1">
+                <h3>1. Qadriyatlar tizimi</h3>
+                <p>Haqiqiy meros — bu sizning qadriyatlaringiz, tamoyillaringiz va sizdan keyin qoladigan yaxshi nomingizdir.</p>
+                <a href="#" class="read-more">Batafsil <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. ALOQA BO'LIMI -->
+    <section id="aloqa" class="section-container contact-box">
+        <h2 class="section-title fade-in">Aloqa</h2>
+        <p class="fade-in" style="color: #b3b3b3; margin-bottom: 20px;">Men bilan bog'lanish uchun quyidagi tarmoqlardan foydalaning:</p>
+        <div class="social-links fade-in">
+            <a href="https://t.me/abror_sayitov" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
+            <a href="https://instagram.com/abror.sayitov" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="tel:+998979250331"><i class="fa-solid fa-phone"></i> Telefon</a>
+            <a href="mailto:abrorsayitov@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        </div>
+    </section>
+
+    <!-- ANIMATSIYA SKRIPTI -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const elements = document.querySelectorAll('.fade-in');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
-                        setTimeout(() => { entry.target.classList.add('visible'); }, index * 150);
+                        setTimeout(() => { entry.target.classList.add('visible'); }, index * 100);
                     }
                 });
             }, { threshold: 0.1 });
