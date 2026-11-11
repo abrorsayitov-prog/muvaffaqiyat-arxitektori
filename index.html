@@ -4,12 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muvaffaqiyat Arxitektori</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- DIZAYN TO'G'RIDAN-TO'G'RI SHU YERGA YOZILDI -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0a0a0a; color: #ffffff; display: flex; justify-content: center; padding: 20px; }
+        .container { max-width: 800px; width: 100%; border: 1px solid #c5a059; padding: 40px 20px; position: relative; background-image: linear-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.05) 1px, transparent 1px); background-size: 20px 20px; }
+        
+        /* Til tanlash menyusi */
+        .top-nav { display: flex; justify-content: flex-end; padding: 10px 20px; position: absolute; top: 0; right: 0; width: 100%; z-index: 100; }
+        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-btn { background: transparent; color: #c5a059; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .lang-btn:hover { background: rgba(197, 160, 89, 0.1); }
+        .lang-menu { display: none; position: absolute; right: 0; background-color: #1a1a1a; min-width: 120px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); border: 1px solid #c5a059; border-radius: 5px; z-index: 1; margin-top: 5px; }
+        .lang-menu a { color: #fff; padding: 10px 15px; text-decoration: none; display: block; font-size: 14px; transition: 0.3s; }
+        .lang-menu a:hover { background-color: #c5a059; color: #0a0a0a; }
+        .lang-dropdown:hover .lang-menu { display: block; }
+
+        /* Sarlavha va rasm */
+        .hero-section { text-align: center; margin-bottom: 40px; margin-top: 20px; }
+        .hero-section h1 { font-size: 24px; color: #c5a059; letter-spacing: 2px; line-height: 1.4; text-shadow: 0 0 10px rgba(197, 160, 89, 0.3); }
+        .hero-section h1 span { font-size: 18px; color: #ffffff; font-weight: 300; }
+        .main-image-container { margin-top: 30px; display: flex; justify-content: center; }
+        .main-image { width: 250px; height: 300px; object-fit: cover; border: 2px solid #c5a059; border-radius: 5px; box-shadow: 0 0 20px rgba(197, 160, 89, 0.2); transition: transform 0.3s ease; }
+        .main-image:hover { transform: scale(1.02); }
+
+        /* Kartochkalar */
+        .sections-grid { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
+        .card { display: flex; align-items: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.3); padding: 15px 20px; text-decoration: none; color: white; border-radius: 8px; transition: all 0.4s ease; cursor: pointer; }
+        .card:hover { background: rgba(197, 160, 89, 0.1); border-color: #c5a059; transform: translateX(10px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
+        .card-icon { font-size: 30px; color: #c5a059; margin-right: 20px; width: 50px; text-align: center; }
+        .card-content h2 { font-size: 18px; color: #c5a059; letter-spacing: 1px; margin-bottom: 5px; }
+        .card-content p { font-size: 14px; color: #b3b3b3; }
+
+        /* Aloqa */
+        .contact-section { text-align: center; border-top: 1px solid rgba(197, 160, 89, 0.3); padding-top: 30px; }
+        .contact-section h2 { color: #c5a059; letter-spacing: 2px; margin-bottom: 10px; }
+        .contact-section p { color: #b3b3b3; margin-bottom: 20px; font-size: 14px; }
+        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .social-links a { color: #c5a059; text-decoration: none; font-size: 16px; border: 1px solid #c5a059; padding: 10px 20px; border-radius: 5px; transition: all 0.3s ease; }
+        .social-links a:hover { background-color: #c5a059; color: #0a0a0a; box-shadow: 0 0 15px rgba(197, 160, 89, 0.5); }
+
+        /* Animatsiya */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
 <body>
 
-    <div class="container">        <!-- Til tanlash menyusi -->
+    <div class="container">
+        
+        <!-- Til tanlash menyusi -->
         <div class="top-nav">
             <div class="lang-dropdown">
                 <button class="lang-btn">
@@ -22,64 +68,67 @@
                 </div>
             </div>
         </div>
+
+        <!-- Sarlavha -->
         <header class="hero-section">
             <h1>MUVAFFAQIYAT POG'ONALARI:<br><span>ERKAKLARNING MUVAFFAQIYATLI ZINASI</span></h1>
             
-            <!-- Rasm joyi: rasm faylini loyiha papkasiga tashlab, src="" ichiga yozing -->
+            <!-- Rasm joyi: Rasm nomini o'zingiznikiga almashtiring -->
             <div class="main-image-container">
                 <img src="Pasted image.png" alt="Muvaffaqiyat Arxitektori" class="main-image">
             </div>
         </header>
 
+        <!-- Bo'limlar -->
         <section class="sections-grid">
             <a href="strategiya.html" class="card fade-in">
-              
-  <div class="card-icon"><i class="fa-solid fa-chess-queen"></i></div>
-                <div class="card-content">
-                    <h2>STRATEGEYA</h2>
-                    <p>Maqsadni belgilash va yutuq rejasi</p>
-                </div>
+                <div class="card-icon"><i class="fa-solid fa-chess-queen"></i></div>
+                <div class="card-content"><h2>STRATEGEYA</h2><p>Maqsadni belgilash va yutuq rejasi</p></div>
             </a>
 
             <a href="intizom.html" class="card fade-in">
                 <div class="card-icon"><i class="fa-solid fa-dumbbell"></i></div>
-                <div class="card-content">
-                    <h2>INTIZOM</h2>
-                    <p>Barqaror harakat va aqliy matonat</p>
-                </div>
+                <div class="card-content"><h2>INTIZOM</h2><p>Barqaror harakat va aqliy matonat</p></div>
             </a>
 
             <a href="uslub.html" class="card fade-in">
                 <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
-                <div class="card-content">
-                    <h2>USLUB</h2>
-                    <p>Libos mukammalligi va o'zini namoyish etish</p>
-                </div>
+                <div class="card-content"><h2>USLUB</h2><p>Libos mukammalligi va o'zini namoyish etish</p></div>
             </a>
 
             <a href="meros.html" class="card fade-in">
                 <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
-                <div class="card-content">
-                    <h2>MEROS</h2>
-                    <p>Bardoshli qadriyat yaratish va uzoq muddatli ta'sir</p>
-                </div>
+                <div class="card-content"><h2>MEROS</h2><p>Bardoshli qadriyat yaratish va uzoq muddatli ta'sir</p></div>
             </a>
         </section>
 
+        <!-- Aloqa -->
         <section class="contact-section fade-in" id="aloqa">
             <h2>ALOQA</h2>
             <p>Men bilan bog'lanish uchun quyidagi tarmoqlardan foydalaning:</p>
             <div class="social-links">
                 <a href="https://t.me/abror_sayitov" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
                 <a href="https://instagram.com/abror.sayitov" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="tel:+998979250331" class="social-link">
-    <i class="fa-solid fa-phone"></i> Telefon
-</a>
+                <a href="tel:+998979250331"><i class="fa-solid fa-phone"></i> Telefon</a>
                 <a href="mailto:abrorsayitov@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
             </div>
         </section>
+
     </div>
 
-    <script src="script.js"></script>
+    <!-- Animatsiya skripti -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => { entry.target.classList.add('visible'); }, index * 150);
+                    }
+                });
+            }, { threshold: 0.1 });
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
