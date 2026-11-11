@@ -44,7 +44,7 @@
         <div class="lesson-header">
             <h1>1. Hayotiy maqsadni aniqlash</h1>
             <div class="meta-info">
-                <span><i class="fa-regular fa-eye"></i> 1,245 ko'rishlar</span>
+                <span><i class="fa-regular fa-eye"></i> <span id="view-count">1</span> ko'rishlar</span>
                 <span><i class="fa-regular fa-calendar"></i> 2026-yil 10-noyabr</span>
             </div>
         </div>
@@ -77,26 +77,74 @@
             <p>Shu tamoyillarga tayangan holda maqsad qo'ysangiz, muvaffaqiyatga erishish ehtimolingiz bir necha barobar ortadi.</p>
         </div>
 
-        <!-- IZOHLAR -->
+               <!-- Izohlar -->
         <div class="comments-section">
-            <h3><i class="fa-regular fa-comments"></i> Fikrlar (2)</h3>
+            <h3><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count">2</span>)</h3>
             
             <div class="comment-box">
-                <textarea placeholder="O'z fikringizni qoldiring..."></textarea>
-                <button>Yuborish</button>
+                <input type="text" id="username-input" placeholder="Ismingiz..." style="background: #111; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; font-family: inherit; margin-bottom: 5px;">
+                <textarea id="comment-input" placeholder="O'z fikringizni qoldiring..."></textarea>
+                <button onclick="addComment()">Yuborish</button>
             </div>
 
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Sardor_A</div>
-                <p>Juda foydali dars ekan, ayniqsa SMART texnikasi menga juda yoqdi. Rahmat!</p>
-            </div>
-            <div class="single-comment">
-                <div class="user"><i class="fa-solid fa-circle-user"></i> Jasur_99</div>
-                <p>Men ham shu usulda o'z maqsadlarimni yozib chiqdim. Endi rejaga amal qilish qoldi.</p>
+            <!-- Mavjud izohlar ro'yxati -->
+            <div id="comments-list">
+                <div class="single-comment">
+                    <div class="user"><i class="fa-solid fa-circle-user"></i> Sardor_A <span class="date">2 soat oldin</span></div>
+                    <p>Juda foydali dars ekan, ayniqsa SMART texnikasi menga juda yoqdi. Rahmat!</p>
+                </div>
+                <div class="single-comment">
+                    <div class="user"><i class="fa-solid fa-circle-user"></i> Jasur_99 <span class="date">Kecha</span></div>
+                    <p>Men ham shu usulda o'z maqsadlarimni yozib chiqdim. Endi rejaga amal qilish qoldi.</p>
+                  <script>
+        // 1. Ko'rishlar sonini oshirish (Reyalistik effekt)
+        document.addEventListener("DOMContentLoaded", function() {
+            let viewElement = document.getElementById("view-count");
+            if(viewElement) {
+                // Raqamni olish va uni 1 taga oshirish
+                let currentViews = parseInt(viewElement.innerText.replace(',', ''));
+                if(isNaN(currentViews)) currentViews = 1245; // Agar xato bo'lsa boshlang'ich qiymat
+                viewElement.innerText = (currentViews + 1).toLocaleString('en-US'); 
+            }
+        });
+
+        // 2. Izoh qo'shish funksiyasi
+        function addComment() {
+            let nameInput = document.getElementById("username-input").value;
+            let textInput = document.getElementById("comment-input").value;
+            
+            // Agar ism yoki izoh bo'sh bo'lsa, ogohlantiramiz
+            if(nameInput.trim() === "" || textInput.trim() === "") {
+                alert("Iltimos, ismingizni va izohingizni yozing!");
+                return;
+            }
+
+            // Yangi izoh elementini yaratamiz
+            let commentsList = document.getElementById("comments-list");
+            let newComment = document.createElement("div");
+            newComment.className = "single-comment";
+            
+            newComment.innerHTML = `
+                <div class="user"><i class="fa-solid fa-circle-user"></i> ${nameInput} <span class="date">Hozirgina</span></div>
+                <p>${textInput}</p>
+            `;
+
+            // Yangi izohni ro'yxatning eng yuqorisiga qo'shamiz
+            commentsList.prepend(newComment);
+
+            // Izohlar sonini yangilaymiz
+            let countElement = document.getElementById("comment-count");
+            let currentCount = parseInt(countElement.innerText);
+            countElement.innerText = currentCount + 1;
+
+            // Kiritish maydonlarini tozalaymiz
+            document.getElementById("username-input").value = "";
+            document.getElementById("comment-input").value = "";
+        }
+    </script>
+ </div>
             </div>
         </div>
-
-    </div>
 
 </body>
 </html>
