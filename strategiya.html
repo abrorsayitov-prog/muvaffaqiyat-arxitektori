@@ -6,42 +6,54 @@
     <title>Strategiya | Muvaffaqiyat Arxitektori</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Bu sahifa uchun maxsus va ishonchli dizayn */
+        .page-title { text-align: center; color: #c5a059; font-size: 32px; margin-bottom: 20px; letter-spacing: 2px; margin-top: 20px;}
+        .back-btn { display: inline-block; color: #c5a059; text-decoration: none; margin-bottom: 20px; font-size: 14px; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+        .back-btn:hover { background: #c5a059; color: #0a0a0a; }
+        
+        .lesson-list { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; padding: 0 15px;}
+        .lesson-item { display: flex; align-items: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.3); padding: 15px; border-radius: 8px; text-decoration: none; color: white; transition: 0.3s; }
+        .lesson-item:hover { background: rgba(197, 160, 89, 0.1); border-color: #c5a059; transform: translateX(10px); }
+        .lesson-item img { width: 120px; height: 80px; object-fit: cover; border-radius: 5px; margin-right: 20px; border: 1px solid #c5a059; }
+        .lesson-text h3 { color: #c5a059; margin-bottom: 5px; font-size: 18px; }
+        .lesson-text p { color: #b3b3b3; font-size: 14px; }
+    </style>
 </head>
 <body>
 
     <div class="container">
         <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Orqaga</a>
-        <!-- Strategiya uchun asosiy rasm -->
-        <div style="text-align: center; margin-bottom: 40px;">
-            <img src="strategiya-rasm.jpg" alt="Strategiya" style="width: 100%; max-width: 600px; border-radius: 10px; border: 1px solid #c5a059; box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);">
-        </div>        
+        
         <h1 class="page-title">STRATEGIYA DARSLARI</h1>
         <p style="text-align: center; color: #b3b3b3; margin-bottom: 30px;">Muvaffaqiyat sari ilk qadamlar. O'zingizga kerakli mavzuni tanlang:</p>
 
-        <div class="lessons-grid">
+        <!-- Darslar ro'yxati -->
+        <div class="lesson-list">
             
             <!-- 1-Dars -->
-            <a href="dars-1.html" class="lesson-card fade-in">
-                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+1" alt="Dars 1">
-                <div class="lesson-info">
+            <a href="dars-1.html" class="lesson-item">
+                <img src="strategiya-dars1.jpg" alt="Dars 1" onerror="this.src='https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+1'">
+                <div class="lesson-text">
                     <h3>1. Hayotiy maqsadni aniqlash</h3>
                     <p>Nima uchun kurashayotganingizni bilasizmi?</p>
                 </div>
             </a>
 
             <!-- 2-Dars -->
-            <a href="dars-2.html" class="lesson-card fade-in">
-                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+2" alt="Dars 2">
-                <div class="lesson-info">
+            <a href="dars-2.html" class="lesson-item">
+                <img src="strategiya-dars2.jpg" alt="Dars 2" onerror="this.src='https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+2'">
+                <div class="lesson-text">
                     <h3>2. Vaqtni boshqarish (Time Management)</h3>
                     <p>24 soatni qanday qilib samarali o'tkazish mumkin?</p>
                 </div>
             </a>
 
             <!-- 3-Dars -->
-            <a href="dars-3.html" class="lesson-card fade-in">
-                <img src="https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+3" alt="Dars 3">
-                <div class="lesson-info">
+            <a href="dars-3.html" class="lesson-item">
+                <img src="strategiya-dars3.jpg" alt="Dars 3" onerror="this.src='https://via.placeholder.com/120x80/1a1a1a/c5a059?text=Dars+3'">
+                <div class="lesson-text">
                     <h3>3. Moliyaviy savodxonlik</h3>
                     <p>Pulni boshqarish va jamg'arish sirlari.</p>
                 </div>
@@ -50,6 +62,5 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
