@@ -69,4 +69,27 @@
 
             <!-- Izohlar shu yerga avtomatik yuklanadi -->
             <div id="comments-list"></div>
+        <!-- (Bu yergacha matnlar, rasmlar, videolar bo'ladi) -->
+        
+        <!-- IZOHLAR BO'LIMI (Siz yuborgan kod shu yerga tushadi) -->
+        <div class="comments-section" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.2); padding: 20px; border-radius: 10px; margin-top: 40px;">
+            <h3 style="color: #c5a059; margin-bottom: 15px;"><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count">0</span>)</h3>
+            
+            <div class="comment-box" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
+                <input type="text" id="username-input" placeholder="Ismingiz..." style="background: #111; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; font-family: inherit; width: 100%; box-sizing: border-box;">
+                <textarea id="comment-input" placeholder="O'z fikringizni qoldiring..." style="background: #111; border: 1px solid #333; color: white; padding: 15px; border-radius: 8px; resize: vertical; min-height: 100px; font-family: inherit;"></textarea>
+                <button onclick="addComment()" style="align-self: flex-end; background: #c5a059; color: #0a0a0a; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer;">Yuborish</button>
+            </div>
+
+            <!-- Izohlar shu yerga yuklanadi -->
+            <div id="comments-list"></div>
+        </div>
+
+    </div> <!-- Bu asosiy konteynerning yopilishi -->
+
+    <!-- SKRIPTNI ULASH (Eng oxirida turishi shart!) -->
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
         </div>
