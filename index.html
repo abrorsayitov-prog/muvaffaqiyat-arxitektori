@@ -34,6 +34,17 @@
         .nav-btn { color: #c5a059; text-decoration: none; border: 1px solid #c5a059; padding: 12px 25px; border-radius: 5px; font-weight: bold; transition: 0.3s; background: rgba(0,0,0,0.5); }
         .nav-btn:hover { background: #c5a059; color: #0a0a0a; box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); }
 
+        /* AKKORDEON TUGMASI */
+        .lesson-toggle {
+            background: rgba(197, 160, 89, 0.1); border: 1px solid #c5a059; color: #c5a059;
+            text-align: center; padding: 15px; border-radius: 8px; cursor: pointer;
+            margin-bottom: 20px; font-weight: bold; transition: 0.3s; font-size: 18px;
+        }
+        .lesson-toggle:hover { background: #c5a059; color: #0a0a0a; }
+        
+        .lessons-wrapper { display: none; animation: slideDown 0.4s ease; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
         /* DARSLAR KARTOCHKASI */
         .lesson-block { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 10px; padding: 30px; margin-bottom: 40px; transition: 0.3s; }
         .lesson-block:hover { border-color: #c5a059; box-shadow: 0 10px 25px rgba(197, 160, 89, 0.15); }
@@ -56,11 +67,9 @@
         .social-links a { color: #c5a059; text-decoration: none; font-size: 16px; border: 1px solid #c5a059; padding: 12px 25px; border-radius: 5px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; }
         .social-links a:hover { background-color: #c5a059; color: #0a0a0a; box-shadow: 0 0 15px rgba(197, 160, 89, 0.5); }
 
-        /* ANIMATSIYA */
+        /* ANIMATSIYA VA TIL */
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* TIL MENYUSI */
         .top-lang { position: absolute; top: 20px; right: 20px; z-index: 100; }
         .lang-btn { background: transparent; color: #c5a059; border: 1px solid #c5a059; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; }
         .lang-btn:hover { background: rgba(197, 160, 89, 0.1); }
@@ -91,40 +100,44 @@
     <!-- 2. STRATEGIYA BO'LIMI -->
     <section id="strategiya" class="section-container">
         <h2 class="section-title fade-in">Strategiya</h2>
-
-        <div class="lesson-block fade-in">
-            <h3>1. Hayotiy maqsadni aniqlash</h3>
-            <img src="strategiya-dars1.jpg" class="lesson-img" alt="Dars 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Strategiya+Dars+1'">
-            <div class="lesson-text">
-                <p>Muvaffaqiyat tasodifan kelmaydi. U aniq belgilangan maqsad va unga erishish uchun qilingan tinimsiz harakatlardan tarkib topadi. Maqsad qo'yishning eng mashhur usullaridan biri bu <b>SMART</b> texnikasidir.</p>
-            </div>
-            
-            <!-- IZOHLAR -->
-            <div class="comments-section">
-                <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-strat1">0</span>)</h4>
-                <div class="comment-box">
-                    <input type="text" id="username-strat1" placeholder="Ismingiz...">
-                    <textarea id="comment-strat1" placeholder="O'z fikringizni qoldiring..."></textarea>
-                    <button onclick="addComment('strat1')">Yuborish</button>
-                </div>
-                <div id="comments-list-strat1"></div>
-            </div>
+        
+        <div class="lesson-toggle fade-in" onclick="toggleLessons('strat-list', this)">
+            <i class="fa-solid fa-chevron-down"></i> Darslar ro'yxatini ko'rish
         </div>
 
-        <div class="lesson-block fade-in">
-            <h3>2. Vaqtni boshqarish</h3>
-            <img src="strategiya-dars2.jpg" class="lesson-img" alt="Dars 2" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Strategiya+Dars+2'">
-            <div class="lesson-text">
-                <p>Vaqt — bu bizda bor eng qimmatli boylikdir. Uni qaytarib bo'lmaydi. Har bir daqiqani to'g'ri taqsimlash muvaffaqiyat asosidir. Pomodoro texnikasidan foydalaning.</p>
-            </div>
-            <div class="comments-section">
-                <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-strat2">0</span>)</h4>
-                <div class="comment-box">
-                    <input type="text" id="username-strat2" placeholder="Ismingiz...">
-                    <textarea id="comment-strat2" placeholder="O'z fikringizni qoldiring..."></textarea>
-                    <button onclick="addComment('strat2')">Yuborish</button>
+        <div id="strat-list" class="lessons-wrapper">
+            <div class="lesson-block">
+                <h3>1. Hayotiy maqsadni aniqlash</h3>
+                <img src="strategiya-dars1.jpg" class="lesson-img" alt="Dars 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Strategiya+Dars+1'">
+                <div class="lesson-text">
+                    <p>Muvaffaqiyat tasodifan kelmaydi. U aniq belgilangan maqsad va unga erishish uchun qilingan tinimsiz harakatlardan tarkib topadi. Maqsad qo'yishning eng mashhur usullaridan biri bu <b>SMART</b> texnikasidir.</p>
                 </div>
-                <div id="comments-list-strat2"></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-strat1">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-strat1" placeholder="Ismingiz...">
+                        <textarea id="comment-strat1" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('strat1')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-strat1"></div>
+                </div>
+            </div>
+
+            <div class="lesson-block">
+                <h3>2. Vaqtni boshqarish</h3>
+                <img src="strategiya-dars2.jpg" class="lesson-img" alt="Dars 2" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Strategiya+Dars+2'">
+                <div class="lesson-text">
+                    <p>Vaqt — bu bizda bor eng qimmatli boylikdir. Uni qaytarib bo'lmaydi. Har bir daqiqani to'g'ri taqsimlash muvaffaqiyat asosidir. Pomodoro texnikasidan foydalaning.</p>
+                </div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-strat2">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-strat2" placeholder="Ismingiz...">
+                        <textarea id="comment-strat2" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('strat2')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-strat2"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -132,38 +145,44 @@
     <!-- 3. INTIZOM BO'LIMI -->
     <section id="intizom" class="section-container" style="background: rgba(255,255,255,0.01);">
         <h2 class="section-title fade-in">Intizom</h2>
-
-        <div class="lesson-block fade-in">
-            <h3>1. Aqliy matonat</h3>
-            <img src="intizom-rasm.jpg" class="lesson-img" alt="Intizom 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Intizom+Dars+1'">
-            <div class="lesson-text">
-                <p>Intizom — bu kayfiyatga qarab emas, balki maqsadga qarab harakat qilishdir. Qiyinchiliklar oldida taslim bo'lmaslikni o'rgatadi.</p>
-            </div>
-            <div class="comments-section">
-                <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-int1">0</span>)</h4>
-                <div class="comment-box">
-                    <input type="text" id="username-int1" placeholder="Ismingiz...">
-                    <textarea id="comment-int1" placeholder="O'z fikringizni qoldiring..."></textarea>
-                    <button onclick="addComment('int1')">Yuborish</button>
-                </div>
-                <div id="comments-list-int1"></div>
-            </div>
+        
+        <div class="lesson-toggle fade-in" onclick="toggleLessons('int-list', this)">
+            <i class="fa-solid fa-chevron-down"></i> Darslar ro'yxatini ko'rish
         </div>
 
-        <div class="lesson-block fade-in">
-            <h3>2. Erta turish odati</h3>
-            <img src="intizom-erta-turish.jpg" class="lesson-img" alt="Intizom 2" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Intizom+Dars+2'">
-            <div class="lesson-text">
-                <p>Ertalabki 1 soat — bu butun kuningizni o'zgartira oladigan sehrli vaqtdir. Dunyo uyg'onishidan oldin uyg'onish sirlari.</p>
-            </div>
-            <div class="comments-section">
-                <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-int2">0</span>)</h4>
-                <div class="comment-box">
-                    <input type="text" id="username-int2" placeholder="Ismingiz...">
-                    <textarea id="comment-int2" placeholder="O'z fikringizni qoldiring..."></textarea>
-                    <button onclick="addComment('int2')">Yuborish</button>
+        <div id="int-list" class="lessons-wrapper">
+            <div class="lesson-block">
+                <h3>1. Aqliy matonat</h3>
+                <img src="intizom-rasm.jpg" class="lesson-img" alt="Intizom 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Intizom+Dars+1'">
+                <div class="lesson-text">
+                    <p>Intizom — bu kayfiyatga qarab emas, balki maqsadga qarab harakat qilishdir. Qiyinchiliklar oldida taslim bo'lmaslikni o'rgatadi.</p>
                 </div>
-                <div id="comments-list-int2"></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-int1">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-int1" placeholder="Ismingiz...">
+                        <textarea id="comment-int1" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('int1')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-int1"></div>
+                </div>
+            </div>
+
+            <div class="lesson-block">
+                <h3>2. Erta turish odati</h3>
+                <img src="intizom-erta-turish.jpg" class="lesson-img" alt="Intizom 2" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Intizom+Dars+2'">
+                <div class="lesson-text">
+                    <p>Ertalabki 1 soat — bu butun kuningizni o'zgartira oladigan sehrli vaqtdir. Dunyo uyg'onishidan oldin uyg'onish sirlari.</p>
+                </div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-int2">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-int2" placeholder="Ismingiz...">
+                        <textarea id="comment-int2" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('int2')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-int2"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -171,21 +190,27 @@
     <!-- 4. USLUB BO'LIMI -->
     <section id="uslub" class="section-container">
         <h2 class="section-title fade-in">Uslub</h2>
+        
+        <div class="lesson-toggle fade-in" onclick="toggleLessons('usl-list', this)">
+            <i class="fa-solid fa-chevron-down"></i> Darslar ro'yxatini ko'rish
+        </div>
 
-        <div class="lesson-block fade-in">
-            <h3>1. Erkaklar kostyumi</h3>
-            <img src="uslub-kostyum.jpg" class="lesson-img" alt="Uslub 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Uslub+Dars+1'">
-            <div class="lesson-text">
-                <p>Kostyum — bu shunchaki kiyim emas, bu sizning jamiyatdagi mavqeingiz va o'zingizga bo'lgan hurmatingizning ko'zgusidir.</p>
-            </div>
-            <div class="comments-section">
-                <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-usl1">0</span>)</h4>
-                <div class="comment-box">
-                    <input type="text" id="username-usl1" placeholder="Ismingiz...">
-                    <textarea id="comment-usl1" placeholder="O'z fikringizni qoldiring..."></textarea>
-                    <button onclick="addComment('usl1')">Yuborish</button>
+        <div id="usl-list" class="lessons-wrapper">
+            <div class="lesson-block">
+                <h3>1. Erkaklar kostyumi</h3>
+                <img src="uslub-kostyum.jpg" class="lesson-img" alt="Uslub 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Uslub+Dars+1'">
+                <div class="lesson-text">
+                    <p>Kostyum — bu shunchaki kiyim emas, bu sizning jamiyatdagi mavqeingiz va o'zingizga bo'lgan hurmatingizning ko'zgusidir.</p>
                 </div>
-                <div id="comments-list-usl1"></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-usl1">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-usl1" placeholder="Ismingiz...">
+                        <textarea id="comment-usl1" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('usl1')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-usl1"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -193,21 +218,27 @@
     <!-- 5. MEROS BO'LIMI -->
     <section id="meros" class="section-container" style="background: rgba(255,255,255,0.01);">
         <h2 class="section-title fade-in">Meros</h2>
+        
+        <div class="lesson-toggle fade-in" onclick="toggleLessons('mer-list', this)">
+            <i class="fa-solid fa-chevron-down"></i> Darslar ro'yxatini ko'rish
+        </div>
 
-        <div class="lesson-block fade-in">
-            <h3>1. Qadriyatlar tizimi</h3>
-            <img src="meros-qadriyat.jpg" class="lesson-img" alt="Meros 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Meros+Dars+1'">
-            <div class="lesson-text">
-                <p>Haqiqiy meros — bu sizning qadriyatlaringiz, tamoyillaringiz va sizdan keyin qoladigan yaxshi nomingizdir.</p>
-            </div>
-            <div class="comments-section">
-                <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-mer1">0</span>)</h4>
-                <div class="comment-box">
-                    <input type="text" id="username-mer1" placeholder="Ismingiz...">
-                    <textarea id="comment-mer1" placeholder="O'z fikringizni qoldiring..."></textarea>
-                    <button onclick="addComment('mer1')">Yuborish</button>
+        <div id="mer-list" class="lessons-wrapper">
+            <div class="lesson-block">
+                <h3>1. Qadriyatlar tizimi</h3>
+                <img src="meros-qadriyat.jpg" class="lesson-img" alt="Meros 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Meros+Dars+1'">
+                <div class="lesson-text">
+                    <p>Haqiqiy meros — bu sizning qadriyatlaringiz, tamoyillaringiz va sizdan keyin qoladigan yaxshi nomingizdir.</p>
                 </div>
-                <div id="comments-list-mer1"></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-mer1">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-mer1" placeholder="Ismingiz...">
+                        <textarea id="comment-mer1" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('mer1')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-mer1"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -225,7 +256,7 @@
     </section>
 
     <!-- =========================================
-         JAVASCRIPT: FIREBASE IZOHLAR TIZIMI
+         JAVASCRIPT: AKKORDEON VA FIREBASE IZOHLAR
          ========================================= -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -243,7 +274,21 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // Izohlarni yuklash funksiyasi
+        // --- AKKORDEON (Ochish/Yopish) ---
+        window.toggleLessons = function(listId, btnElement) {
+            let list = document.getElementById(listId);
+            let icon = btnElement.querySelector('i');
+            
+            if (list.style.display === "block") {
+                list.style.display = "none";
+                icon.className = "fa-solid fa-chevron-down";
+            } else {
+                list.style.display = "block";
+                icon.className = "fa-solid fa-chevron-up";
+            }
+        };
+
+        // --- IZOHLARNI YUKLASH ---
         function loadComments(sectionId) {
             const list = document.getElementById(`comments-list-${sectionId}`);
             const countSpan = document.getElementById(`comment-count-${sectionId}`);
@@ -274,12 +319,11 @@
             });
         }
 
-        // Sahifa yuklanganda barcha izohlarni yuklash
+        // --- SAHIFA YUKLANGANDA ---
         window.addEventListener("DOMContentLoaded", () => {
             const sections = ['strat1', 'strat2', 'int1', 'int2', 'usl1', 'mer1'];
             sections.forEach(sec => loadComments(sec));
             
-            // Animatsiya
             const elements = document.querySelectorAll('.fade-in');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry, index) => {
@@ -291,7 +335,7 @@
             elements.forEach(el => observer.observe(el));
         });
 
-        // Global funksiya (HTML dan chaqirish uchun)
+        // --- IZOH QO'SHISH ---
         window.addComment = async function(sectionId) {
             const name = document.getElementById(`username-${sectionId}`).value;
             const text = document.getElementById(`comment-${sectionId}`).value;
