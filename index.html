@@ -7,61 +7,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* =========================================
-           ASOSIY DIZAYN
-           ========================================= */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #0a0a0a; color: #ffffff; overflow-x: hidden; }
         
-        .bg-grid {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px; z-index: -1;
-        }
+        .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 160, 89, 0.03) 1px, transparent 1px); background-size: 30px 30px; z-index: -1; }
 
         .section-container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; position: relative; }
         .section-title { text-align: center; color: #c5a059; font-size: 32px; letter-spacing: 3px; margin-bottom: 40px; text-transform: uppercase; text-shadow: 0 0 15px rgba(197, 160, 89, 0.3); border-bottom: 1px solid rgba(197,160,89,0.2); padding-bottom: 20px;}
 
-        /* BOSH SAHIFA */
         .hero { text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
         .hero h1 { font-size: 28px; color: #c5a059; letter-spacing: 2px; line-height: 1.5; margin-bottom: 20px; }
         .hero h1 span { font-size: 20px; color: #ffffff; font-weight: 300; }
         .hero-img { width: 280px; height: 350px; object-fit: cover; border: 2px solid #c5a059; border-radius: 10px; box-shadow: 0 0 30px rgba(197, 160, 89, 0.3); margin-bottom: 40px; transition: transform 0.4s; }
         .hero-img:hover { transform: scale(1.05); }
 
-        /* NAVIGATSIYA */
         .nav-menu { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
         .nav-btn { color: #c5a059; text-decoration: none; border: 1px solid #c5a059; padding: 12px 25px; border-radius: 5px; font-weight: bold; transition: 0.3s; background: rgba(0,0,0,0.5); }
         .nav-btn:hover { background: #c5a059; color: #0a0a0a; box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); }
 
-        /* AKKORDEON TUGMASI */
-        .lesson-toggle {
-            background: rgba(197, 160, 89, 0.1); border: 1px solid #c5a059; color: #c5a059;
-            text-align: center; padding: 15px; border-radius: 8px; cursor: pointer;
-            margin-bottom: 20px; font-weight: bold; transition: 0.3s; font-size: 18px;
-        }
+        .lesson-toggle { background: rgba(197, 160, 89, 0.1); border: 1px solid #c5a059; color: #c5a059; text-align: center; padding: 15px; border-radius: 8px; cursor: pointer; margin-bottom: 20px; font-weight: bold; transition: 0.3s; font-size: 18px; }
         .lesson-toggle:hover { background: #c5a059; color: #0a0a0a; }
         
         .lessons-wrapper { display: none; animation: slideDown 0.4s ease; }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* DARSLAR KARTOCHKASI */
         .lesson-block { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 10px; padding: 30px; margin-bottom: 40px; transition: 0.3s; }
         .lesson-block:hover { border-color: #c5a059; box-shadow: 0 10px 25px rgba(197, 160, 89, 0.15); }
         .lesson-block h3 { color: #c5a059; font-size: 24px; margin-bottom: 5px; }
         
-        /* KO'RISHLAR SONI */
         .view-count { color: #888; font-size: 14px; margin-bottom: 15px; display: block; }
         .view-count i { color: #c5a059; margin-right: 5px; }
 
         .lesson-img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333; }
         .lesson-text { color: #d1d1d1; line-height: 1.8; font-size: 16px; margin-bottom: 20px; }
 
-        /* VİDEO UCHUN DIZAYN */
         .video-wrapper { width: 100%; margin-bottom: 20px; border-radius: 8px; overflow: hidden; border: 1px solid #c5a059; box-shadow: 0 0 15px rgba(197, 160, 89, 0.2); }
         .video-wrapper iframe { width: 100%; aspect-ratio: 16/9; display: block; }
 
-        /* IZOHLAR QISMI */
         .comments-section { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(197, 160, 89, 0.2); padding: 20px; border-radius: 10px; margin-top: 30px; }
         .comments-section h4 { color: #c5a059; margin-bottom: 15px; font-size: 18px; }
         .comment-box { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
@@ -70,13 +52,11 @@
         .comment-box button { align-self: flex-end; background: #c5a059; color: #000; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .comment-box button:hover { background: #e0b96b; }
 
-        /* ALOQA */
         .contact-box { text-align: center; margin-top: 40px; }
         .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
         .social-links a { color: #c5a059; text-decoration: none; font-size: 16px; border: 1px solid #c5a059; padding: 12px 25px; border-radius: 5px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; }
         .social-links a:hover { background-color: #c5a059; color: #0a0a0a; box-shadow: 0 0 15px rgba(197, 160, 89, 0.5); }
 
-        /* ANIMATSIYA VA TIL */
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         .top-lang { position: absolute; top: 20px; right: 20px; z-index: 100; }
@@ -92,7 +72,6 @@
         <button class="lang-btn"><i class="fa-solid fa-globe"></i> Tillar</button>
     </div>
 
-    <!-- 1. BOSH SAHIFA -->
     <header class="hero">
         <h1 class="fade-in">MUVAFFAQIYAT ARXITEKTORI:<br><span>ERKAKLARNING HASHAMATLI CHIZMASI</span></h1>
         <img src="Pasted image.png" alt="Asosiy Rasm" class="hero-img fade-in">
@@ -106,7 +85,7 @@
         </div>
     </header>
 
-    <!-- 2. STRATEGIYA BO'LIMI -->
+    <!-- 2. STRATEGIYA BO'LIMI (3 ta dars) -->
     <section id="strategiya" class="section-container">
         <h2 class="section-title fade-in">Strategiya</h2>
         
@@ -115,18 +94,13 @@
         </div>
 
         <div id="strat-list" class="lessons-wrapper">
+            <!-- Dars 1 -->
             <div class="lesson-block">
                 <h3>1. Hayotiy maqsadni aniqlash</h3>
                 <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-strat1">0</span> ko'rishlar</span>
                 <img src="strategiya-dars1.jpg" class="lesson-img" alt="Dars 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Strategiya+Dars+1'">
-                
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div class="lesson-text">
-                    <p>Muvaffaqiyat tasodifan kelmaydi. U aniq belgilangan maqsad va unga erishish uchun qilingan tinimsiz harakatlardan tarkib topadi. Maqsad qo'yishning eng mashhur usullaridan biri bu <b>SMART</b> texnikasidir.</p>
-                </div>
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Muvaffaqiyat tasodifan kelmaydi. U aniq belgilangan maqsad va unga erishish uchun qilingan tinimsiz harakatlardan tarkib topadi.</p></div>
                 <div class="comments-section">
                     <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-strat1">0</span>)</h4>
                     <div class="comment-box">
@@ -138,18 +112,13 @@
                 </div>
             </div>
 
+            <!-- Dars 2 -->
             <div class="lesson-block">
                 <h3>2. Vaqtni boshqarish</h3>
                 <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-strat2">0</span> ko'rishlar</span>
                 <img src="strategiya-dars2.jpg" class="lesson-img" alt="Dars 2" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Strategiya+Dars+2'">
-                
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div class="lesson-text">
-                    <p>Vaqt — bu bizda bor eng qimmatli boylikdir. Uni qaytarib bo'lmaydi. Har bir daqiqani to'g'ri taqsimlash muvaffaqiyat asosidir. Pomodoro texnikasidan foydalaning.</p>
-                </div>
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Vaqt — bu bizda bor eng qimmatli boylikdir. Uni qaytarib bo'lmaydi. Har bir daqiqani to'g'ri taqsimlash muvaffaqiyat asosidir.</p></div>
                 <div class="comments-section">
                     <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-strat2">0</span>)</h4>
                     <div class="comment-box">
@@ -160,10 +129,28 @@
                     <div id="comments-list-strat2"></div>
                 </div>
             </div>
+
+            <!-- Dars 3 -->
+            <div class="lesson-block">
+                <h3>3. Moliyaviy savodxonlik</h3>
+                <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-strat3">0</span> ko'rishlar</span>
+                <img src="strategiya-dars3.jpg" class="lesson-img" alt="Dars 3" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Strategiya+Dars+3'">
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Pulni topish emas, uni to'g'ri boshqarish va jamg'arish san'ati haqida bilimlar. Moliyaviy erkinlik sari qadam.</p></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-strat3">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-strat3" placeholder="Ismingiz...">
+                        <textarea id="comment-strat3" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('strat3')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-strat3"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 3. INTIZOM BO'LIMI -->
+    <!-- 3. INTIZOM BO'LIMI (3 ta dars) -->
     <section id="intizom" class="section-container" style="background: rgba(255,255,255,0.01);">
         <h2 class="section-title fade-in">Intizom</h2>
         
@@ -172,18 +159,13 @@
         </div>
 
         <div id="int-list" class="lessons-wrapper">
+            <!-- Dars 1 -->
             <div class="lesson-block">
                 <h3>1. Aqliy matonat</h3>
                 <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-int1">0</span> ko'rishlar</span>
                 <img src="intizom-rasm.jpg" class="lesson-img" alt="Intizom 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Intizom+Dars+1'">
-                
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div class="lesson-text">
-                    <p>Intizom — bu kayfiyatga qarab emas, balki maqsadga qarab harakat qilishdir. Qiyinchiliklar oldida taslim bo'lmaslikni o'rgatadi.</p>
-                </div>
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Intizom — bu kayfiyatga qarab emas, balki maqsadga qarab harakat qilishdir. Qiyinchiliklar oldida taslim bo'lmaslikni o'rgatadi.</p></div>
                 <div class="comments-section">
                     <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-int1">0</span>)</h4>
                     <div class="comment-box">
@@ -195,18 +177,13 @@
                 </div>
             </div>
 
+            <!-- Dars 2 -->
             <div class="lesson-block">
                 <h3>2. Erta turish odati</h3>
                 <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-int2">0</span> ko'rishlar</span>
                 <img src="intizom-erta-turish.jpg" class="lesson-img" alt="Intizom 2" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Intizom+Dars+2'">
-                
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div class="lesson-text">
-                    <p>Ertalabki 1 soat — bu butun kuningizni o'zgartira oladigan sehrli vaqtdir. Dunyo uyg'onishidan oldin uyg'onish sirlari.</p>
-                </div>
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Ertalabki 1 soat — bu butun kuningizni o'zgartira oladigan sehrli vaqtdir. Dunyo uyg'onishidan oldin uyg'onish sirlari.</p></div>
                 <div class="comments-section">
                     <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-int2">0</span>)</h4>
                     <div class="comment-box">
@@ -217,10 +194,28 @@
                     <div id="comments-list-int2"></div>
                 </div>
             </div>
+
+            <!-- Dars 3 -->
+            <div class="lesson-block">
+                <h3>3. Jismoniy tarbiya</h3>
+                <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-int3">0</span> ko'rishlar</span>
+                <img src="intizom-sport.jpg" class="lesson-img" alt="Intizom 3" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Intizom+Dars+3'">
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Sog'lom tanada — sog'lom aql. Jismoniy mashqlar energiya va diqqatni oshiradi.</p></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-int3">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-int3" placeholder="Ismingiz...">
+                        <textarea id="comment-int3" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('int3')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-int3"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 4. USLUB BO'LIMI -->
+    <!-- 4. USLUB BO'LIMI (3 ta dars) -->
     <section id="uslub" class="section-container">
         <h2 class="section-title fade-in">Uslub</h2>
         
@@ -229,18 +224,13 @@
         </div>
 
         <div id="usl-list" class="lessons-wrapper">
+            <!-- Dars 1 -->
             <div class="lesson-block">
                 <h3>1. Erkaklar kostyumi</h3>
                 <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-usl1">0</span> ko'rishlar</span>
                 <img src="uslub-kostyum.jpg" class="lesson-img" alt="Uslub 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Uslub+Dars+1'">
-                
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div class="lesson-text">
-                    <p>Kostyum — bu shunchaki kiyim emas, bu sizning jamiyatdagi mavqeingiz va o'zingizga bo'lgan hurmatingizning ko'zgusidir.</p>
-                </div>
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Kostyum — bu shunchaki kiyim emas, bu sizning jamiyatdagi mavqeingiz va o'zingizga bo'lgan hurmatingizning ko'zgusidir.</p></div>
                 <div class="comments-section">
                     <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-usl1">0</span>)</h4>
                     <div class="comment-box">
@@ -251,10 +241,46 @@
                     <div id="comments-list-usl1"></div>
                 </div>
             </div>
+
+            <!-- Dars 2 -->
+            <div class="lesson-block">
+                <h3>2. Aksessuarlar</h3>
+                <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-usl2">0</span> ko'rishlar</span>
+                <img src="uslub-aksessuar.jpg" class="lesson-img" alt="Uslub 2" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Uslub+Dars+2'">
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Erkak qiyofasini to'ldiruvchi eng muhim detallar: soat, kamar va poyabzal uyg'unligi.</p></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-usl2">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-usl2" placeholder="Ismingiz...">
+                        <textarea id="comment-usl2" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('usl2')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-usl2"></div>
+                </div>
+            </div>
+
+            <!-- Dars 3 -->
+            <div class="lesson-block">
+                <h3>3. O'zini tutish madaniyati</h3>
+                <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-usl3">0</span> ko'rishlar</span>
+                <img src="uslub-nutq.jpg" class="lesson-img" alt="Uslub 3" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Uslub+Dars+3'">
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Qimmatbaho kostyum kiyish oson, lekin unga munosib o'zini tutish va nutq madaniyati qiyin.</p></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-usl3">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-usl3" placeholder="Ismingiz...">
+                        <textarea id="comment-usl3" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('usl3')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-usl3"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 5. MEROS BO'LIMI -->
+    <!-- 5. MEROS BO'LIMI (3 ta dars) -->
     <section id="meros" class="section-container" style="background: rgba(255,255,255,0.01);">
         <h2 class="section-title fade-in">Meros</h2>
         
@@ -263,18 +289,13 @@
         </div>
 
         <div id="mer-list" class="lessons-wrapper">
+            <!-- Dars 1 -->
             <div class="lesson-block">
                 <h3>1. Qadriyatlar tizimi</h3>
                 <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-mer1">0</span> ko'rishlar</span>
                 <img src="meros-qadriyat.jpg" class="lesson-img" alt="Meros 1" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Meros+Dars+1'">
-                
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div class="lesson-text">
-                    <p>Haqiqiy meros — bu sizning qadriyatlaringiz, tamoyillaringiz va sizdan keyin qoladigan yaxshi nomingizdir.</p>
-                </div>
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Haqiqiy meros — bu sizning qadriyatlaringiz, tamoyillaringiz va sizdan keyin qoladigan yaxshi nomingizdir.</p></div>
                 <div class="comments-section">
                     <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-mer1">0</span>)</h4>
                     <div class="comment-box">
@@ -283,6 +304,42 @@
                         <button onclick="addComment('mer1')">Yuborish</button>
                     </div>
                     <div id="comments-list-mer1"></div>
+                </div>
+            </div>
+
+            <!-- Dars 2 -->
+            <div class="lesson-block">
+                <h3>2. Oilaviy meros</h3>
+                <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-mer2">0</span> ko'rishlar</span>
+                <img src="meros-oila.jpg" class="lesson-img" alt="Meros 2" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Meros+Dars+2'">
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Farzandlarga qoldiriladigan eng katta boylik — bu yaxshi tarbiya va to'g'ri yo'l.</p></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-mer2">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-mer2" placeholder="Ismingiz...">
+                        <textarea id="comment-mer2" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('mer2')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-mer2"></div>
+                </div>
+            </div>
+
+            <!-- Dars 3 -->
+            <div class="lesson-block">
+                <h3>3. Xayriya va jamiyat</h3>
+                <span class="view-count"><i class="fa-regular fa-eye"></i> <span id="views-mer3">0</span> ko'rishlar</span>
+                <img src="meros-xayriya.jpg" class="lesson-img" alt="Meros 3" onerror="this.src='https://via.placeholder.com/800x400/1a1a1a/c5a059?text=Meros+Dars+3'">
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dars videosi" frameborder="0" allowfullscreen></iframe></div>
+                <div class="lesson-text"><p>Insondan qoladigan eng go'zal iz — bu uning yaxshiligi va qilgan xayr-ehsonlaridir.</p></div>
+                <div class="comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Fikrlar (<span id="comment-count-mer3">0</span>)</h4>
+                    <div class="comment-box">
+                        <input type="text" id="username-mer3" placeholder="Ismingiz...">
+                        <textarea id="comment-mer3" placeholder="O'z fikringizni qoldiring..."></textarea>
+                        <button onclick="addComment('mer3')">Yuborish</button>
+                    </div>
+                    <div id="comments-list-mer3"></div>
                 </div>
             </div>
         </div>
@@ -318,6 +375,9 @@
 
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
+
+        // Barcha darslarning ID lari (Buni o'zgartirmang!)
+        const allSections = ['strat1', 'strat2', 'strat3', 'int1', 'int2', 'int3', 'usl1', 'usl2', 'usl3', 'mer1', 'mer2', 'mer3'];
 
         // 1. AKKORDEON (Ochish/Yopish)
         window.toggleLessons = function(listId, btnElement) {
@@ -366,7 +426,7 @@
 
         // 3. KO'RISHLAR SONINI HISOBLASH
         async function incrementViews(sectionId) {
-            // Har safar yangilaganda +1 bo'lmasligi uchun sessiya xotirasidan tekshiramiz
+            // Sessiya xotirasida tekshiramiz, har yangilaganda +1 bo'lmasligi uchun
             if (!sessionStorage.getItem(`viewed_${sectionId}`)) {
                 try {
                     const docRef = doc(db, "views", sectionId);
@@ -399,9 +459,8 @@
 
         // 5. SAHIFA YUKLANGANDA HAMMASINI ISHGA TUSHIRISH
         window.addEventListener("DOMContentLoaded", () => {
-            const sections = ['strat1', 'strat2', 'int1', 'int2', 'usl1', 'mer1'];
             
-            sections.forEach(sec => {
+            allSections.forEach(sec => {
                 loadComments(sec);
                 loadViews(sec);      
                 incrementViews(sec); 
